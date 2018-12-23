@@ -4,9 +4,9 @@
 mov_pause_duration = 0.8
 
 # User input
-num_takes = int(input('Number of takes (default 20): ') or 20)
-shutter_duration = float(input('Focus time (seconds, default 3): ') or 3.0)
-focus_pause_duration = float(input('Take time (seconds, default 1): ') or 1.0)
+num_takes = int(input('Imatges per volta (predeterminat 30): ') or 30)
+shutter_duration = float(input('Segons per enforcar (temps de rele, predeterminat 1): ') or 1.0)
+focus_pause_duration = float(input('Temps exposicio camera (predeterminat 0.5): ') or 0.5)
 
 
 # DEFINITIONS
@@ -60,9 +60,10 @@ gcode.append(G_header('begin turn motion'))
 gcode += G_shutter()
 
 # Move-shutter loop
-for i in range(num_takes - 1):
+for i in range(num_takes):
   gcode.append(G_move('X', turn_distance))
   gcode += G_shutter()
+  # Comment every 10 lines
   if i % 10 == 9:
     turn = str(i+1)
     gcode.append(G_header(turn + ' turns'))
