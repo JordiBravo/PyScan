@@ -1,10 +1,8 @@
 # SETTINGS
 #######################################################
-# feed_speed = 0.01
-mov_pause_duration = 0.8
-
 # User input
 num_takes = int(input('Imatges per volta (predeterminat 30): ') or 30)
+mov_pause_duration = float(input('Segons de pausa despres del moviment (predeterminat 2): ') or 2.0)
 shutter_duration = float(input('Segons per enforcar (temps de rele, predeterminat 1): ') or 1.0)
 focus_pause_duration = float(input('Temps exposicio camera (predeterminat 0.5): ') or 0.5)
 
