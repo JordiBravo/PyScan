@@ -11,7 +11,7 @@ focus_pause_duration = float(input('Temps exposicio camera (predeterminat 0.5): 
 #######################################################
 def G_move(axis, dist):
   code = 'G0 '
-  code += axis + str(dist)
+  code += axis + '-' + str(dist)
   # code += ' F' + str(feed_speed)
   code += ' (Linear move)'
   return(code)
